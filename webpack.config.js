@@ -39,6 +39,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({ name: ["vendor", "manifest"] }),
     new HtmlWebpackPlugin({
       template: "src/index.html"
+    }),
+    // defineplugin is used to define environment variables
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE.ENV)
     })
   ]
 };
